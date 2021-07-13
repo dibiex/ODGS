@@ -1,4 +1,4 @@
-from ods.config import ssh, ssh_key
+from odgs.config import ssh, ssh_key
 from mcstatus import MinecraftServer
 
 

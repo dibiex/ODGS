@@ -2,7 +2,7 @@ import digitalocean
 import paramiko
 import time
 
-from ods.config import ssh, ssh_key
+from odgs.config import ssh, ssh_key
 
 
 class Provider():
@@ -76,7 +76,7 @@ class DigitalOcean(Provider):
     def __get_ssh_key(self, manager):
         
         keys = manager.get_all_sshkeys()
-        key = [key for key in keys if key.name == self.config.SSH_KEY_NAME][0]
+        key = next(key for key in keys if key.name == self.config.SSH_KEY_NAME)
         return key
 
 
@@ -129,7 +129,7 @@ class DigitalOcean(Provider):
         image = self.__get_latest_snapshot(manager)
 
         try: 
-            droplet = [droplet for droplet in droplets if droplet.name == self.config.INSTANCE_NAME][0]
+            droplet = next(droplet for droplet in droplets if droplet.name == self.config.INSTANCE_NAME)
         except:
             raise Exception("Couldn't retrieve instance")
         
@@ -144,3 +144,4 @@ class DigitalOcean(Provider):
         print('Stopped instance')
 
     def erase(self):
+        pass
