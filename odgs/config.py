@@ -17,7 +17,7 @@ class Config():
     FIRSTRUN = True
     
     SSH_TIMEOUT = 120
-    SSH_KEY_NAME = 'minecraft_key'
+    SSH_KEY_NAME = os.getenv('SSH_KEY_NAME')
     SSH_USERNAME = 'root'
 
     GAME_NAME = os.getenv('GAME_NAME')
