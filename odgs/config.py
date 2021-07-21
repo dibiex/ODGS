@@ -13,7 +13,7 @@ class Config():
     INSTANCE_TYPE = 's-1vcpu-1gb'
     INSTANCE_NAME = 'test'
 
-    FIRSTRUN_IMAGE = 'ubuntu-16-04-x64'
+    FIRSTRUN_IMAGE = 'ubuntu-20-04-x64'
     FIRSTRUN = True
     
     SSH_TIMEOUT = 120

@@ -1,5 +1,5 @@
 from odgs.config import Config
-from odgs.provider import DigitalOcean
+from odgs.providers.digitalocean import DigitalOcean
 
 if __name__ =="__main__":
     config = Config()
